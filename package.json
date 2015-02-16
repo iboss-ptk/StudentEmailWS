@@ -1,0 +1,10 @@
+{
+  "name": "sewsc",
+  "description": "Student email web service client application.",
+  "author": "Supanat Potiwarakorn <supanat.ptk@gmail.com>",
+  "dependencies": {
+    "express": ">= 1.2.0",
+    "soap": ">= 0.7.0"
+  },
+  "engine": "node 0.10.25"
+}
