@@ -1,10 +1,15 @@
 {
   "name": "sewsc",
+  "version": "0.0.1",
   "description": "Student email web service client application.",
   "author": "Supanat Potiwarakorn <supanat.ptk@gmail.com>",
   "dependencies": {
     "express": ">= 1.2.0",
     "soap": ">= 0.7.0"
   },
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/iboss-ptk/node_soap_ws"
+	},
   "engine": "node 0.10.25"
 }

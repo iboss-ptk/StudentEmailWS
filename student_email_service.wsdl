@@ -1,0 +1,47 @@
+<definitions name="studenEmailService"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+   <message name="StudentEmailRequest">
+    <part name="name" type="xsd:string"/>
+    <part name="univ" type="xsd:string"/>
+    <part name="country" type="xsd:string"/>
+   </message>
+   <message name="StudentEmailResponse">
+    <part name="email" type="xsd:string"/>
+   </message>
+
+   <portType name="Email_PortType">
+    <operation name="getStudentEmail">
+       <input message="tns:StudentEmailRequest"/>
+       <output message="tns:StudentEmailResponse"/>
+    </operation>
+   </portType>
+
+   <binding name="Email_Binding" type="tns:Email_PortType">
+   <soap:binding style="rpc"
+    transport="http://schemas.xmlsoap.org/soap/http"/>
+   <operation name="getStudentEmail">
+    <soap:operation soapAction="getStudentEmail"/>
+    <input>
+       <soap:body
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+        use="encoded"/>
+    </input>
+    <output>
+       <soap:body
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+        use="encoded"/>
+    </output>
+   </operation>
+   </binding>
+
+   <service name="Email_Service">
+    <documentation>WSDL File for StuedentEmailWS</documentation>
+    <port binding="tns:Email_Binding" name="Email_Port">
+       <soap:address
+        location="http://localhost:8000/"/>
+    </port>
+   </service>
+</definitions>
